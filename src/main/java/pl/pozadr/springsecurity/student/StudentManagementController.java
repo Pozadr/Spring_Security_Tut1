@@ -3,7 +3,6 @@ package pl.pozadr.springsecurity.student;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.List;
 
@@ -41,6 +40,6 @@ public class StudentManagementController {
     @PreAuthorize("hasAuthority('student:write')")
     public void updateStudent(@PathVariable("studentId") Integer studentId, @RequestBody Student student) {
         System.out.println("updateStudent");
-        System.out.println(String.format("%s %s", studentId, student));
+        System.out.printf("%s %s", studentId, student);
     }
 }
